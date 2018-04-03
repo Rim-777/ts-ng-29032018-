@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["es6"]
+  },
+  "include": [
+    "./firstHW.ts"
+  ]
+}
