@@ -121,19 +121,19 @@
 //   firstName!: string;
 //   age!: number;
 // }
+//
+//function isString(myVar: number | string): myVar is string {
+//  return typeof myVar === "string";
+//}
+//
+//function average(a: number | string): number {
+//  let total = 0;
+//  if (isString(a)) {
+//    total += parseInt(a, 10);
+//  } else {
+//    total += a;
+//  }
+//  return 1;
+//}
 
-function isString(myVar: number | string): myVar is string {
-  return typeof myVar === "string";
-}
-
-function average(a: number | string): number {
-  let total = 0;
-  if (isString(a)) {
-    total += parseInt(a, 10);
-  } else {
-    total += a;
-  }
-  return 1;
-}
-
-average(1);
+//average(1);
