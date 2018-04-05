@@ -1,11 +1,13 @@
 {
   "extends": "../../tsconfig.json",
-  "include": [ "src/**/*.ts" ],
+  "include": [
+    "**/*.ts"
+  ],
   "compileOnSave": true,
-    "compilerOptions": {
+  "compilerOptions": {
     "noEmitOnError": false,
     "preserveWatchOutput": true,
-      "watch": true,
-      "noImplicitAny": true
-    }
+    "watch": true,
+    "noImplicitAny": true
+  }
 }

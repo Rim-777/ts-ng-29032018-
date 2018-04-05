@@ -39,7 +39,9 @@ function summator(...rest: sn[]): number {
 function getUnique(...rest: sn[]): sn[] {
     let uniqueArr: sn[] = [];
     for (let el of rest) {
-        if (uniqueArr.indexOf(el) === -1) uniqueArr.push(el);
+        if (uniqueArr.indexOf(el) === -1) {
+          uniqueArr.push(el);
+        }
     }
 
     return uniqueArr;

@@ -1,25 +1,25 @@
 function isString(a: number | string): a is string {
-    return typeof a === "string";
+  return typeof a === "string";
 }
 
 function summator(...arg: Array<number | string>) {
-    for (let i = 0; i < arg.length; i++) {
-        if (isString(arg[i])) {
-            arg[i] = +arg[i];
-
-            if (isNaN(arg[i])) { // Error
-                throw new Error(`Не корректные данные '${arg[i]}'.`);
-            }
-        }
+  for (let i = 0; i < arg.length; i++) {
+    let a = arg[i];
+    if (isString(a)) {
+      arg[i] = +arg[i];
+      if (isNaN(arg[i])) { // Error
+        throw new Error(`Не корректные данные '${arg[i]}'.`);
+      }
     }
+  }
 
-    return arg.reduce((sum, current) => {
-        return sum + current; // Error
-    });
+  return arg.reduce((sum, current) => {
+    return sum + current; // Error
+  });
 }
 
 try {
-    alert(summator(1, 2, 3, 4));
+  alert(summator(1, 2, 3, 4));
 } catch (e) {
-    alert(e.message);
+  alert(e.message);
 }
