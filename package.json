@@ -1,7 +1,6 @@
 {
   "name": "ts-ng-29032018",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +12,15 @@
     "add": "^2.0.6",
     "tslint": "^5.9.1",
     "typescript": "^2.8.1"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rim-777/ts-ng-29032018-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rim-777/ts-ng-29032018-/issues"
+  },
+  "homepage": "https://github.com/Rim-777/ts-ng-29032018-#readme",
+  "description": ""
 }
