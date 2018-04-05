@@ -3,20 +3,20 @@
 //     и возвращает массив уникальных элементов. Аргумент не должен изменяться.
 //     Порядок элементов результирующего массива должен совпадать с порядком,
 //     в котором они встречаются в оригинальной структуре.
-function getUnique(...arg: Array<string|number>): string[]{
+// function getUnique(...arg: Array<string|number>): string[]{
+//
+//     let retVal: string[] = [];
+//
+//     for (let i of arg) {
+//
+//        if(!retVal.includes(i)){
+//           retVal.push(i);
+//        }
+//
+//     }
+//
+//     return retVal;
+//
+// }
 
-    let retVal: string[] = [];
-
-    for (let i of arg) {
-
-       if(!retVal.includes(i)){
-          retVal.push(i);
-       }
-
-    }
-
-    return retVal;
-
-}
-
-console.log(getUnique("1",2,"a",4,4,"b","a",78)); // [ '1', 2, 'a', 4, 'b', 78 ]
+// console.log(getUnique("1",2,"a",4,4,"b","a",78)); // [ '1', 2, 'a', 4, 'b', 78 ]
