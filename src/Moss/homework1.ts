@@ -1,22 +1,23 @@
-function isInArray<T>(arr: T[], ...args: T[]): boolean {
+export function isInArray<T>(arr: T[], ...args: T[]): boolean {
     for (const entry of args) {
         if (arr.includes(entry)) {
             continue;
         }
+
         return false;
     }
     return true;
 }
 
-function convertToNum<T>(item: stringOrNumber) {
-    const result = typeof item === "number" ? item : parseFloat(item);
+export function convertToNum<T>(item: stringOrNumber) {
+    let result = typeof item === "number" ? item : parseFloat(item);
     if (isNaN(result)) {
-        throw new TypeError("Wrong type of the term");
+        result = 0;
     }
     return result;
 }
 
-function summator(...args: stringOrNumber []): number {
+export function summator(...args: stringOrNumber []): number {
     let sum = 0;
 
     for (const entry of args) {
@@ -25,7 +26,7 @@ function summator(...args: stringOrNumber []): number {
     return sum;
 }
 
-function getUnique<T>(...args: T[]): T[] {
+export function getUnique<T>(...args: T[]): T[] {
   return args.filter((elem, index, arr): boolean => {
     return arr.indexOf(elem) === index;
   });
