@@ -1,1 +1,1 @@
-type stringOrNumber = number | string;
+type strOrNum = number | string;
