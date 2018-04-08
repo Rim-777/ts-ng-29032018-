@@ -1,54 +1,44 @@
 export function isInArray<T>(arr: T[], ...args: T[]): boolean {
-    for (const entry of args) {
-        if (arr.includes(entry)) {
-            continue;
-        }
-
-        return false;
-    }
-    return true;
+    return args.every((element: T): boolean => {
+        return arr.includes(element);
+    });
 }
 
-export function convertToNum<T>(item: stringOrNumber) {
-    let result = typeof item === "number" ? item : parseFloat(item);
-    if (isNaN(result)) {
-        result = 0;
-    }
-    return result;
+export function toNum<T>(item: strOrNum) {
+    const result = typeof item === "number" ? item : parseFloat(item);
+    return isNaN(result) ? 0 : result;
 }
 
-export function summator(...args: stringOrNumber []): number {
-    let sum = 0;
-
-    for (const entry of args) {
-        sum += convertToNum(entry);
-    }
-    return sum;
+export function summator(...args: strOrNum []): number {
+    return args.map(toNum).reduce((sum, entry) => {
+        return sum + entry;
+    });
 }
 
 export function getUnique<T>(...args: T[]): T[] {
-  return args.filter((elem, index, arr): boolean => {
-    return arr.indexOf(elem) === index;
-  });
+    return args.filter((elem, index, arr): boolean => {
+        return arr.indexOf(elem) === index;
+    });
 }
 
-// function stringReverse(initialWord: string): string {
-//   const arr: string[] = initialWord.toString().split("");
-//   const arrOfWords: string[] = [];
-//   const obj: {} = {};
-//   const regexp = new RegExp("[0-9$&+,:;=?@#|'<>.^*()%!-]");
-//
-//   for (let i = 0; i < arr.length; i++) {
-//     if (!arr[i].match(regexp)) {
-//       arrOfWords.unshift(arr[i]);
-//     } else {
-//       obj[i] = arr[i];
-//     }
-//   }
-//
-//   for (const index in obj) {
-//     arrOfWords.splice(index, 0, obj[index])
-//   }
-//
-//   return arrOfWords.join("");
-// }
+const SYMBOLS = new RegExp("[0-9$&+,:;=?@#|'<>.^*()%!-]");
+
+export function stringReverse(initialWord: string): string {
+    const arr: string[] = initialWord.toString().split("");
+    const targetArray: string[] = [];
+    const obj: { [index: number]: string } = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if (!arr[i].match(SYMBOLS)) {
+            targetArray.unshift(arr[i]);
+        } else {
+            obj[i] = arr[i];
+        }
+    }
+
+    for (const [key, value] of Object.entries(obj)) {
+        targetArray.splice(parseInt(key, 10), 0, value);
+    }
+
+    return targetArray.join("");
+}
